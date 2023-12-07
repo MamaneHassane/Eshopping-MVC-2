@@ -1,0 +1,26 @@
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/appsettings.Development.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/appsettings.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC.staticwebassets.runtime.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC.deps.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC.runtimeconfig.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC.dll
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/ref/Eshopping MVC.dll
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/Eshopping MVC.pdb
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.csproj.AssemblyReference.cache
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.GeneratedMSBuildEditorConfig.editorconfig
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.AssemblyInfoInputs.cache
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.AssemblyInfo.cs
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.csproj.CoreCompileInputs.cache
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.MvcApplicationPartsAssemblyInfo.cache
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.RazorAssemblyInfo.cache
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.RazorAssemblyInfo.cs
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/staticwebassets.build.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/staticwebassets.development.json
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/scopedcss/bundle/Eshopping MVC.styles.css
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/scopedcss/projectbundle/Eshopping MVC.bundle.scp.css
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.dll
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/ref/Eshopping MVC.dll
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.pdb
+/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/obj/Debug/net6.0/Eshopping MVC.genruntimeconfig.cache
