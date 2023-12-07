@@ -7,5 +7,5 @@ public class ProductCopy
     [Key] 
     public string SerialNumber { get; set; }
     public int? ProductId { get; set; }
-    p ublic int? CartId { get; set; }
+    public int? CartId { get; set; }
 }
