@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Eshopping.Models;
+namespace Eshopping_MVC.Models;
 using System.ComponentModel.DataAnnotations;
 
 [Serializable]

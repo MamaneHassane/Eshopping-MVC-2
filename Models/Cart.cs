@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Eshopping.Models
+namespace Eshopping_MVC.Models
 {
     public class Cart
     {

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Eshopping.Models;
+namespace Eshopping_MVC.Models;
 
 [Serializable]
 public class Client

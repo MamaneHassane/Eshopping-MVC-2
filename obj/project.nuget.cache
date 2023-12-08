@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l/1uEmI/dX6wsfc+q8nhaL4Ug1M7oxxwUZKIA3SlxfcFt00fZb6LAR7VVyqjpfwDqHJTtNIjtpXLKSRkt3akHQ==",
+  "dgSpecHash": "RlH6oASM6pUhzcQhsEzSxpjQ3EAMaJK25Csat5z5PgVr5mudzHFa+ICf4miV8E7Ksgur4KT0WasY/sU+NGh+Ww==",
   "success": true,
   "projectFilePath": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/Eshopping MVC.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.0/microsoft.entityframeworkcore.relational.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.sqlite/6.0.0/microsoft.entityframeworkcore.sqlite.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/6.0.0/microsoft.entityframeworkcore.sqlite.core.6.0.0.nupkg.sha512",
+    "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.tools/6.0.0/microsoft.entityframeworkcore.tools.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.extensions.caching.memory/6.0.0/microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -32,7 +33,6 @@
     "/home/hassane/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "/home/hassane/.nuget/packages/sqlite/3.13.0/sqlite.3.13.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.6/sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "/home/hassane/.nuget/packages/sqlitepclraw.core/2.0.6/sqlitepclraw.core.2.0.6.nupkg.sha512",
     "/home/hassane/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.6/sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

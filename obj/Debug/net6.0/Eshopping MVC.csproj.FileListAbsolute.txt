@@ -47,10 +47,6 @@
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/win-arm64/native/sni.dll
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/win-x64/native/sni.dll
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/win-x86/native/sni.dll
-/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/linux-x64/native/libsqlite3.so
-/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/osx-x64/native/libsqlite3.dylib
-/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/win7-x64/native/sqlite3.dll
-/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/win7-x86/native/sqlite3.dll
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/alpine-x64/native/libe_sqlite3.so
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/linux-arm/native/libe_sqlite3.so
 /home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/bin/Debug/net6.0/runtimes/linux-arm64/native/libe_sqlite3.so
