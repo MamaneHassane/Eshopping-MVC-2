@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eshopping_MVC.Controllers;
 
+[Controller]
 public class AuthController : Controller
 {
     private readonly AppDbContext _context;
