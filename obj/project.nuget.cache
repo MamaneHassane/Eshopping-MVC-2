@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "/kpW1RZiO3PJtf8r0rNZXgJKyQ3+07HPMalcuuonFxEa9qiUlMTXXfHD0I4g0MyGzPwPqnPniLMp6IUDisC9sg==",
+  "dgSpecHash": "l/1uEmI/dX6wsfc+q8nhaL4Ug1M7oxxwUZKIA3SlxfcFt00fZb6LAR7VVyqjpfwDqHJTtNIjtpXLKSRkt3akHQ==",
   "success": true,
   "projectFilePath": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/Eshopping MVC.csproj",
   "expectedPackageFiles": [
     "/home/hassane/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
+    "/home/hassane/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.data.sqlite.core/6.0.0/microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore/6.0.0/microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.0/microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.0/microsoft.entityframeworkcore.analyzers.6.0.0.nupkg.sha512",
+    "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.design/6.0.0/microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.0/microsoft.entityframeworkcore.relational.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.sqlite/6.0.0/microsoft.entityframeworkcore.sqlite.6.0.0.nupkg.sha512",
     "/home/hassane/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/6.0.0/microsoft.entityframeworkcore.sqlite.core.6.0.0.nupkg.sha512",
