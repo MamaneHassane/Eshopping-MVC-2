@@ -33,7 +33,7 @@ public class AuthController : Controller
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier,Client.Login),
+                new Claim(ClaimTypes.NameIdentifier,Client.email),
                 new Claim("Role","User")
             };
             ClaimsIdentity claimsIdentity =
