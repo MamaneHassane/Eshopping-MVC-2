@@ -1,10 +1,18 @@
+using Eshopping_MVC.DbManagement;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
+// Configure AppDbContext
+builder.Services.AddDbContext<AppDbContext>(
+    options =>
+    {
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    });
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -15,9 +23,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
