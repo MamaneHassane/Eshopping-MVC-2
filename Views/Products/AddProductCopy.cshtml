@@ -1,0 +1,34 @@
+@model TModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Ajouter un exemplaire à un produit</title>
+</head>
+<body>
+<h1>Ajout d'exemplaires</h1>
+<div>
+    <form asp-controller="Products" asp-action="AddProductCopy" method="post">
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        <label for="SerialCode">Numéro de série</label>
+        <input type="text" id="SerialCode" name="SerialCode"/>
+        <span asp-validation-for="SerialNumber" class="text-danger"></span>
+        
+        <label for="productId" >Identifiant produit</label>
+        <input type="number" id="productId" name="productId" required/>
+        <span asp-validation-for="productId" class="text-danger"></span>
+        
+        <label for="">Identifiant produit</label>
+        <input type="number" id="productId" name="productId" required/>
+        <span asp-validation-for="productId" class="text-danger"></span>
+                
+    </form>
+
+</div>
+</body>
+</html>

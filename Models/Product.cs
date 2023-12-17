@@ -20,6 +20,8 @@ public class Product
     [Required]
     public int Quantity { get; set; }
 
+    public ICollection<ProductCopy> ProductCopies { get; set; } = new List<ProductCopy>();
+
     public ICollection<Cart>? carts { get; set; }
     
 }
