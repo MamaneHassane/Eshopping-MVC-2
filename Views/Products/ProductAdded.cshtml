@@ -1,4 +1,4 @@
-@model TModel
+@model Eshopping_MVC.Models.Product
 
 @{
     Layout = null;
@@ -8,11 +8,19 @@
 
 <html>
 <head>
-    <title>title</title>
+    <title>Produit ajouté</title>
 </head>
 <body>
 <div>
-      
+    <h1>Produit ajouté</h1>
+    <p>Identifiant : @Model.productId</p>
+    <p>Nom : @Model.Name</p>
+    <p>Prix : @Model.Price</p>
+    <p>Description: @Model.Description</p>
+    <p>Identifiant : @Model.productId</p>
+    <p>Image : @Model.ImageUrl </p>
+    <a class="btn-link" href="@Url.Action("")">Continuer</a>
+
 </div>
 </body>
 </html>

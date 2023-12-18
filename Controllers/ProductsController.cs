@@ -74,7 +74,7 @@ public class ProductsController : Controller
         else return View(product);
     }
 
-    public IActionResult AddProductItem()
+    public IActionResult AddProductCopy()
     {
         return View();
     }

@@ -1,4 +1,4 @@
-@model TModel
+@model List<Eshopping_MVC.Models.ProductCopy>
 
 @{
     Layout = null;
@@ -8,11 +8,39 @@
 
 <html>
 <head>
-    <title>title</title>
+    <title>Liste d'exemplaires</title>
 </head>
 <body>
-<div>
-      
+<h1>Liste d'exemplaires</h1>
+@if (Model.Count > 0)
+{
+    <div>
+        <table class="table-bordered">
+            <thead>
+            <tr>
+                <th>Numéro de série</th>
+                <th>Identifiant produit</th>
+                <th>Identifiant cart</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            @foreach (var productCopy in Model)
+            {
+                <tr>
+                    <td>@productCopy.SerialCode</td>
+                    <td>@productCopy.ProductId</td>
+                    <td>@productCopy.CartId</td>
+                </tr>
+            }
+            </tbody>
+        </table>
 </div>
+}
+else
+{
+    <p>Aucun exemplaire pour ce produit</p>
+}
+
 </body>
 </html>

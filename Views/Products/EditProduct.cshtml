@@ -1,4 +1,4 @@
-@model TModel
+@model Eshopping_MVC.Models.Product
 
 @{
     Layout = null;
@@ -6,13 +6,30 @@
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>title</title>
 </head>
 <body>
 <div>
-      
+    <h1>Modifier un produit</h1>
+    <form asp-controller="Products" asp-action="EditProduct" method="post">
+        <label for="name">Nom du produit</label>
+        <input type="text" id="name" required/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+        <label for="description">Description</label>
+        <input type="text" id="description" required/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+        
+        <label for="imageUrl">Image</label>
+        <input type="text" id="imageUrl" required/>
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        
+        <label for="price">Prix</label>
+        <input type="number" id="price" required/>
+        <span asp-validation-for="Price" class="text-danger" ></span>
+    </form>
+
 </div>
 </body>
 </html>
