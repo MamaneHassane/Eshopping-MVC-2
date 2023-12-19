@@ -25,20 +25,16 @@ public class ProductsController : Controller
     {
         if (ModelState.IsValid)
         {
-            //Add the game to the database 
             _context.Products.Add(product);
             _context.SaveChanges();
-            // Redirect to ProductAdded with the id of the product
             return RedirectToAction("ProductAdded", new { id = product.productId});
         }
-        else return View(product);
+        return View(product);
     }
     
     public IActionResult ProductAdded(int id)
     {
-        // Retrive the product whit his id
         var addedProduct = _context.Products.FirstOrDefault(p => p.productId == id);
-        // If null
         if (addedProduct == null) return NotFound();
         else return View(addedProduct);
     }
@@ -46,7 +42,6 @@ public class ProductsController : Controller
     public IActionResult ProductsList()
     {
         var products = _context.Products.ToList();
-        // Utilisation du logger
         _logger.LogInformation("Listed all products");
         return View(products);
     }

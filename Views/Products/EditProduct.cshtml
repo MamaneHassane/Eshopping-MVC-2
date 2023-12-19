@@ -14,20 +14,22 @@
 <div>
     <h1>Modifier un produit</h1>
     <form asp-controller="Products" asp-action="EditProduct" method="post">
+        <input type="hidden" asp-for="productId"/>
         <label for="name">Nom du produit</label>
-        <input type="text" id="name" required/>
+        <input type="text" id="name" name="Name" asp-for="Name" required/>
         <span asp-validation-for="Name" class="text-danger"></span>
         <label for="description">Description</label>
-        <input type="text" id="description" required/>
+        <input type="text" id="description" name="Description" asp-for="Description" required/>
         <span asp-validation-for="Name" class="text-danger"></span>
-        
+
         <label for="imageUrl">Image</label>
-        <input type="text" id="imageUrl" required/>
+        <input type="text" id="imageUrl" name="ImageUrl" asp-for="ImageUrl" required/>
         <span asp-validation-for="ImageUrl" class="text-danger"></span>
-        
+
         <label for="price">Prix</label>
-        <input type="number" id="price" required/>
-        <span asp-validation-for="Price" class="text-danger" ></span>
+        <input type="number" id="price" name="Price" asp-for="Price" required/>
+        <span asp-validation-for="Price" class="text-danger"></span>
+        <button type="submit">Modifier</button>
     </form>
 
 </div>

@@ -1,4 +1,5 @@
 using Eshopping_MVC.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,12 @@ builder.Services.AddDbContext<AppDbContext>(
     {
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+{
+    option.LoginPath = "/Auth/Login";
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+});
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

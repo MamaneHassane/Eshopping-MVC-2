@@ -18,15 +18,13 @@
         {
             <div class="col-md-4">
                 <div class="card">
-                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name"/>
+                    <img src="~/@product.ImageUrl" class="card-img-top" alt="@product.Name"/>
                     <div class="card-body">
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text">@product.Description</p>
                         <div class="btn-group">
                             <a href="@Url.Action("ProductAdded", new { id = product.productId })" class="btn btn-primary">Détails</a>
-                            @*Get the game avec le GameId*@
                             <a href="@Url.Action("EditProduct", new { id = product.productId })" class="btn btn-warning">Modifier</a>
-                            @* <a href="@Url.Action("Delete", new { id = item.GameId })" class="btn btn-danger">Delete</a> *@
                         </div>
                     </div>
                 </div>
