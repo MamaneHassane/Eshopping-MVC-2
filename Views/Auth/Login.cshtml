@@ -1,8 +1,6 @@
 @model Eshopping_MVC.Models.Client
 
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
@@ -11,16 +9,23 @@
     <title>Login</title>
 </head>
 <body>
-<div>
-    <form asp-controller="Auth" asp-action="Login" method="post">
-        <label for="email">Login:</label>
-        <input type="text" id="email" name="email" required/>
+<div class="container mt-5">
+    <form asp-controller="Auth" asp-action="Login" method="post" class="col-md-4 offset-md-4">
+        <div class="form-group">
+            <label for="email">Login:</label>
+            <input type="text" id="email" name="email" class="form-control" required/>
+        </div>
         
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required/>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" required/>
+        </div>
+        <br/>
 
-        <button type="submit">Connect</button>
+        <button type="submit" class="btn btn-primary btn-block">Connect</button>
     </form>
+    
+    <p class="text-center mt-3">Don't have an account? <a asp-controller="Client" asp-action="Register">Register here</a></p>
 </div>
 </body>
 </html>

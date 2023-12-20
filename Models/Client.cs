@@ -11,5 +11,6 @@ public class Client
     public int clientId { get; set; }
     public string email { get; set; }
     public string password { get; set; }
-    public Cart? cart { get; set; }
+    public int? CartId { get; set; }
+    public Cart? Cart { get; set; }
 }

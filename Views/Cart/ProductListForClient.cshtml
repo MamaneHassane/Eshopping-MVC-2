@@ -1,0 +1,26 @@
+@model IEnumerable<Eshopping_MVC.Models.Product>
+
+<h1>Catalogue des produits</h1>
+<form method="post" action="@Url.Action("Index", "Cart")">
+    <button type="submit" class="btn btn-warning">My Cart</button>
+</form>
+<br/>
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="~/@product.ImageUrl" class="card-img-top" alt="@product.Name"/>
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text">Price: $@product.Price</p>
+                    
+                    <form method="post" action="@Url.Action("AddToCart", "Cart", new { productId = product.productId })">
+                        <button type="submit" class="btn btn-success">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

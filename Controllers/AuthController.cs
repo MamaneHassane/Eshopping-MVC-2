@@ -4,6 +4,8 @@ using Eshopping_MVC.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Eshopping_MVC.Controllers
 {
@@ -12,10 +14,12 @@ namespace Eshopping_MVC.Controllers
     {
         private readonly AppDbContext _context;
         private readonly ILogger<AuthController> _logger;
+        private readonly IMemoryCache _cache;
 
-        public AuthController(AppDbContext context, ILogger<AuthController> logger)
+        public AuthController(AppDbContext context, IMemoryCache cache,ILogger<AuthController> logger)
         {
             _context = context;
+            _cache = cache;
             _logger = logger;
         }
 
@@ -36,7 +40,7 @@ namespace Eshopping_MVC.Controllers
                 ModelState.AddModelError(string.Empty, "Email and password are required.");
                 return View();
             }
-            else if (client.email == "azer" && client.password == "azer")
+            else if (client.email == "hassane" && client.password == "shopadmin1")
             {
                 List<Claim> claims = new List<Claim>
                 {
@@ -57,7 +61,39 @@ namespace Eshopping_MVC.Controllers
             var dbClient = _context.Clients.FirstOrDefault(c => c.email == client.email && c.password == client.password);
             if (dbClient != null)
             {
-                return RedirectToAction("Index", "Home");
+                _cache.Set<int>("ClientId", dbClient.clientId);
+                _logger.LogInformation("Client authentifié");
+
+                // Verifier que le client a un panier
+                if (dbClient.Cart == null)
+                {
+                    // Vérifiez si le client a déjà un panier dans la base de données
+                    var existingCart = _context.Carts.FirstOrDefault(c => c.ClientId == dbClient.clientId);
+
+                    if (existingCart == null)
+                    {
+                        // Créer un nouveau panier pour le client
+                        var newCart = new Cart();
+                        dbClient.Cart = newCart;
+
+                        try
+                        {
+                            _context.Carts.Add(newCart);
+                            _context.SaveChanges(); // Enregistrez le panier dans la base de données
+                        }
+                        catch (DbUpdateException ex)
+                        {
+                            _logger.LogError(ex, "Erreur lors de l'enregistrement du panier dans la base de données");
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        // Utilisez le panier existant s'il y en a déjà un
+                        dbClient.Cart = existingCart;
+                    }
+                }
+                return RedirectToAction("ProductListForClient", "Cart");
             }
             else ModelState.AddModelError(string.Empty, "Invalid username or password");
             return View();

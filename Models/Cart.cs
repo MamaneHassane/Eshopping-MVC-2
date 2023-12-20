@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Eshopping_MVC.Models
 {
@@ -12,15 +13,16 @@ namespace Eshopping_MVC.Models
         public ICollection<Product>? Products { get; set; } = new List<Product>();
         
         public int? ClientId { get; set; }
-        public string CartProductIds { get; set; }  
-
+        //public string CartProductIds { get; set; }  
+        [ForeignKey("ClientId")]
+        public Client Client { get; set; }
         public void AddProductById(int productId)
         {
             
         }
         public void ClearCart()
         {
-            CartProductIds = "[]";
+            //CartProductIds = "[]";
             Products = new List<Product>();
         }
     }

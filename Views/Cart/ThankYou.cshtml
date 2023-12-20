@@ -1,0 +1,22 @@
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Thank you</title>
+</head>
+<body>
+<div>
+    <h1>Commande confirmée !</h1>
+    <p>Votre commande est en route. Merci pour votre confiance !</p>
+    <form method="post" action="@Url.Action("Index", "Cart")">
+        <button type="submit" class="btn btn-success">Retour</button>
+        </form>
+</div>
+</body>
+</html>

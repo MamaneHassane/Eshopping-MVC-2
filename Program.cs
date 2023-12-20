@@ -20,6 +20,7 @@ builder.Services.AddAuthentication(
     option.LoginPath = "/Auth/Login";
     option.ExpireTimeSpan = TimeSpan.FromMinutes(10);
 });
+builder.Services.AddMemoryCache();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -35,8 +36,15 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
+// Controlleur par défaut, au démarrage de l'application
+
+app.MapControllerRoute( 
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "client",
+    pattern: "Client/{action=Register}/{id?}",
+    defaults: new { controller = "Client" });
 
 app.Run();
