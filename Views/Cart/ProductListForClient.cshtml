@@ -4,6 +4,10 @@
 <form method="post" action="@Url.Action("Index", "Cart")">
     <button type="submit" class="btn btn-warning">My Cart</button>
 </form>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<form>
+    <a class="btn btn-danger" href="@Url.Action("Logout", "Auth")">Déconnexion</a>
+</form>
 <br/>
 <div class="row">
     @foreach (var product in Model)

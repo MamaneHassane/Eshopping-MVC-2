@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Eshopping_MVC.Data;
 using Eshopping_MVC.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Eshopping_MVC.Controllers;
 
 public class ClientController : Controller
@@ -28,5 +30,74 @@ public class ClientController : Controller
         }
         // Cas d'erreur
         return View(model);
+    }
+    public IActionResult Index()
+    {
+        var clients = _context.Clients.ToList();
+        return View(clients);
+    }
+
+    public IActionResult Edit(int id)
+    {
+        var client = _context.Clients.Find(id);
+
+        if (client == null)
+        {
+            return NotFound();
+        }
+
+        return View(client);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(int id, Client model)
+    {
+        if (id != model.clientId)
+        {
+            return NotFound();
+        }
+
+        if (ModelState.IsValid)
+        {
+            _context.Entry(model).State = EntityState.Modified;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        return View(model);
+    }
+
+    public IActionResult Delete(int id)
+    {
+        var client = _context.Clients.Find(id);
+
+        if (client == null)
+        {
+            return NotFound();
+        }
+
+        return View(client);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        var client = _context.Clients.Find(id);
+
+        if (client == null)
+        {
+            return NotFound();
+        }
+
+        // Supprimer le client et son panier associé
+        if (client.Cart != null)
+        {
+            _context.Carts.Remove(client.Cart);
+        }
+
+        _context.Clients.Remove(client);
+        _context.SaveChanges();
+
+        return RedirectToAction("Index");
     }
 }

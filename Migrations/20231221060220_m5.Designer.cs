@@ -3,6 +3,7 @@ using System;
 using Eshopping_MVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eshopping_MVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231221060220_m5")]
+    partial class m5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
@@ -43,7 +45,8 @@ namespace Eshopping_MVC.Migrations
 
                     b.HasKey("CartId");
 
-                    b.HasIndex("ClientId");
+                    b.HasIndex("ClientId")
+                        .IsUnique();
 
                     b.ToTable("Carts");
                 });
@@ -66,9 +69,6 @@ namespace Eshopping_MVC.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("clientId");
-
-                    b.HasIndex("CartId")
-                        .IsUnique();
 
                     b.ToTable("Clients");
                 });
@@ -142,20 +142,10 @@ namespace Eshopping_MVC.Migrations
             modelBuilder.Entity("Eshopping_MVC.Models.Cart", b =>
                 {
                     b.HasOne("Eshopping_MVC.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId");
+                        .WithOne("Cart")
+                        .HasForeignKey("Eshopping_MVC.Models.Cart", "ClientId");
 
                     b.Navigation("Client");
-                });
-
-            modelBuilder.Entity("Eshopping_MVC.Models.Client", b =>
-                {
-                    b.HasOne("Eshopping_MVC.Models.Cart", "Cart")
-                        .WithOne()
-                        .HasForeignKey("Eshopping_MVC.Models.Client", "CartId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Cart");
                 });
 
             modelBuilder.Entity("Eshopping_MVC.Models.ProductCopy", b =>
@@ -163,6 +153,11 @@ namespace Eshopping_MVC.Migrations
                     b.HasOne("Eshopping_MVC.Models.Product", null)
                         .WithMany("ProductCopies")
                         .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("Eshopping_MVC.Models.Client", b =>
+                {
+                    b.Navigation("Cart");
                 });
 
             modelBuilder.Entity("Eshopping_MVC.Models.Product", b =>

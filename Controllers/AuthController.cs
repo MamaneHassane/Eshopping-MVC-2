@@ -9,6 +9,9 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace Eshopping_MVC.Controllers
 {
+
+
+
     [Controller]
     public class AuthController : Controller
     {
@@ -16,7 +19,7 @@ namespace Eshopping_MVC.Controllers
         private readonly ILogger<AuthController> _logger;
         private readonly IMemoryCache _cache;
 
-        public AuthController(AppDbContext context, IMemoryCache cache,ILogger<AuthController> logger)
+        public AuthController(AppDbContext context, IMemoryCache cache, ILogger<AuthController> logger)
         {
             _context = context;
             _cache = cache;
@@ -44,8 +47,8 @@ namespace Eshopping_MVC.Controllers
             {
                 List<Claim> claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.NameIdentifier,client.email),
-                    new Claim("Role","User")
+                    new Claim(ClaimTypes.NameIdentifier, client.email),
+                    new Claim("Role", "User")
                 };
                 ClaimsIdentity claimsIdentity =
                     new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -58,7 +61,9 @@ namespace Eshopping_MVC.Controllers
                     new ClaimsPrincipal(claimsIdentity), properties);
                 return RedirectToAction("Index", "Home");
             }
-            var dbClient = _context.Clients.FirstOrDefault(c => c.email == client.email && c.password == client.password);
+
+            var dbClient =
+                _context.Clients.FirstOrDefault(c => c.email == client.email && c.password == client.password);
             if (dbClient != null)
             {
                 _cache.Set<int>("ClientId", dbClient.clientId);
@@ -93,10 +98,31 @@ namespace Eshopping_MVC.Controllers
                         dbClient.Cart = existingCart;
                     }
                 }
+
                 return RedirectToAction("ProductListForClient", "Cart");
             }
             else ModelState.AddModelError(string.Empty, "Invalid username or password");
+
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            var role = User.FindFirst("Role")?.Value;
+
+            if (role == "User")
+            {
+                // Si l'utilisateur est un client, supprimez les données de la cache
+                _cache.Remove("ClientId");
+            }
+
+            // Déconnexion
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Login");
+        }
     }
-}
+
+
+}    

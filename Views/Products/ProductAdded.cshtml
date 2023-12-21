@@ -1,26 +1,46 @@
 @model Eshopping_MVC.Models.Product
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
 <head>
     <title>Produit ajouté</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .btn-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<div>
+<div class="container">
     <h1>Produit ajouté</h1>
-    <p>Identifiant : @Model.productId</p>
-    <p>Nom : @Model.Name</p>
-    <p>Prix : @Model.Price</p>
-    <p>Description: @Model.Description</p>
-    <p>Identifiant : @Model.productId</p>
-    <p>Image : @Model.ImageUrl </p>
-    <a class="btn-link" href="@Url.Action("ProductsList","Products")">Continuer</a>
-
+    <p><strong>Identifiant :</strong> @Model.productId</p>
+    <p><strong>Nom :</strong> @Model.Name</p>
+    <p><strong>Prix :</strong> @Model.Price</p>
+    <p><strong>Description :</strong> @Model.Description</p>
+    <p><strong>Image :</strong> @Model.ImageUrl</p>
+    <a class="btn btn-link" href="@Url.Action("ProductsList", "Products")">Continuer</a>
 </div>
+
 </body>
 </html>

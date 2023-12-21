@@ -5,8 +5,15 @@
 <div class="text-center mt-5">
     <h1 class="display-4">Welcome</h1>
     <p class="lead">Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form>
+        <a class="btn btn-danger" href="@Url.Action("Logout", "Auth")">Déconnexion</a>
+    </form>
+    <br/>
     <div class="btn-group mt-3">
         <a class="btn btn-primary" href="@Url.Action("AddProduct", "Products")">Ajouter produit</a>
         <a class="btn btn-secondary" href="@Url.Action("ProductsList", "Products")">Catalogue des produits</a>
+        <a class="btn btn-info" href="@Url.Action("Index", "Client")">Liste des clients</a>
+        <a class="btn btn-warning" href="@Url.Action("Register", "Client")">Ajouter un client</a>
+        
     </div>
 </div>
