@@ -26,7 +26,6 @@ else
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text">@product.Description</p>
                         <p>Quantity: @product.Quantity</p>
-                        <a href="@Url.Action("RemoveFromCart", new { id = product.productId })" class="btn btn-danger">Remove from Cart</a>
                     </div>
                 </div>
             </div>
@@ -37,3 +36,5 @@ else
         <a href="@Url.Action("Checkout")" class="btn btn-success">Proceed to Checkout</a>
     </div>
 }
+
+

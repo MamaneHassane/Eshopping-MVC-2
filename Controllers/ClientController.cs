@@ -26,9 +26,8 @@ public class ClientController : Controller
         {
             _context.Clients.Add(model);
             _context.SaveChanges();
-            return RedirectToAction("Index", "Home"); // Rediriger vers la page d'authentification
+            return RedirectToAction("Index", "Home"); 
         }
-        // Cas d'erreur
         return View(model);
     }
     public IActionResult Index()
@@ -88,8 +87,6 @@ public class ClientController : Controller
         {
             return NotFound();
         }
-
-        // Supprimer le client et son panier associé
         if (client.Cart != null)
         {
             _context.Carts.Remove(client.Cart);

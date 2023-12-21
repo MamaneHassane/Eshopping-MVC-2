@@ -9,9 +9,6 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace Eshopping_MVC.Controllers
 {
-
-
-
     [Controller]
     public class AuthController : Controller
     {
@@ -69,22 +66,19 @@ namespace Eshopping_MVC.Controllers
                 _cache.Set<int>("ClientId", dbClient.clientId);
                 _logger.LogInformation("Client authentifié");
 
-                // Verifier que le client a un panier
                 if (dbClient.Cart == null)
                 {
-                    // Vérifiez si le client a déjà un panier dans la base de données
                     var existingCart = _context.Carts.FirstOrDefault(c => c.ClientId == dbClient.clientId);
 
                     if (existingCart == null)
                     {
-                        // Créer un nouveau panier pour le client
                         var newCart = new Cart();
                         dbClient.Cart = newCart;
 
                         try
                         {
                             _context.Carts.Add(newCart);
-                            _context.SaveChanges(); // Enregistrez le panier dans la base de données
+                            _context.SaveChanges(); 
                         }
                         catch (DbUpdateException ex)
                         {
@@ -94,7 +88,6 @@ namespace Eshopping_MVC.Controllers
                     }
                     else
                     {
-                        // Utilisez le panier existant s'il y en a déjà un
                         dbClient.Cart = existingCart;
                     }
                 }
@@ -113,11 +106,9 @@ namespace Eshopping_MVC.Controllers
 
             if (role == "User")
             {
-                // Si l'utilisateur est un client, supprimez les données de la cache
                 _cache.Remove("ClientId");
             }
 
-            // Déconnexion
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Login");

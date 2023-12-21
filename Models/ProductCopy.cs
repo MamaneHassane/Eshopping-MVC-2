@@ -12,3 +12,7 @@ public class ProductCopy
     
     public int? Quantity { get; set; }
 }
+
+/*<!--
+    <a href="@Url.Action("RemoveFromCart", new { id = product.productId })" class="btn btn-danger">Remove from Cart</a>
+    -->*/
