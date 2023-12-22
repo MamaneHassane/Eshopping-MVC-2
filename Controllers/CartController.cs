@@ -12,6 +12,7 @@ public class CartController : Controller
 {
     private readonly AppDbContext _context;
     private readonly IMemoryCache _cache;
+
     public CartController(AppDbContext context, IMemoryCache cache)
     {
         _context = context;
@@ -21,11 +22,12 @@ public class CartController : Controller
     public IActionResult Index()
     {
         var clientId = GetCurrentClientId();
-        var clientWithCart = _context.Clients.Include(c => c.Cart).ThenInclude(cart => cart.Products).FirstOrDefault(c => c.clientId == clientId);
+        var clientWithCart = _context.Clients.Include(c => c.Cart).ThenInclude(cart => cart.Products)
+            .FirstOrDefault(c => c.clientId == clientId);
 
         if (clientWithCart == null)
         {
-            return View("Error"); 
+            return View("Error");
         }
 
         var cart = clientWithCart.Cart;
@@ -35,9 +37,10 @@ public class CartController : Controller
             ViewBag.IsEmptyCart = true;
             return View();
         }
+
         return View(cart.Products);
     }
-    
+
     public IActionResult ProductListForClient()
     {
         var products = _context.Products.ToList();
@@ -59,6 +62,7 @@ public class CartController : Controller
             var newCart = new Cart();
             client.Cart = newCart;
             _context.Carts.Add(newCart);
+            _context.SaveChanges();
         }
 
         var cart = client.Cart;
@@ -66,9 +70,15 @@ public class CartController : Controller
 
         if (product != null)
         {
-            if (product.Quantity == 1) product.Quantity++;
-            else product.Quantity = 1; 
-            if(product.Quantity==1) cart.Products.Add(product);
+            if (product.Quantity == 0)
+            {
+                product.Quantity++;
+            }
+            else
+            {
+                product.Quantity = 1;
+                cart.Products.Add(product);
+            } 
         }
         
         _context.SaveChanges();
@@ -76,7 +86,8 @@ public class CartController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult RemoveFromCart(int productId)
+
+public IActionResult RemoveFromCart(int productId)
     {
         var clientId = GetCurrentClientId();
         var cart = _context.Carts.Include(c => c.Products).FirstOrDefault(c => c.ClientId == clientId);
@@ -85,7 +96,6 @@ public class CartController : Controller
         {
             return View("Error");
         }
-
         var productToRemove = cart.Products.FirstOrDefault(p => p.productId == productId);
         if (productToRemove != null)
         {
@@ -93,8 +103,6 @@ public class CartController : Controller
         }
         return RedirectToAction("Index");
     }
-
-
     
     [HttpGet]
     public IActionResult DeleteCart()
@@ -114,26 +122,12 @@ public class CartController : Controller
             _context.Clients.FirstOrDefault(c => c.clientId == client.clientId).Cart = new Cart();
             _context.SaveChanges();
         }
-
         return RedirectToAction("ProductListForClient", "Cart");
     }
 
     public IActionResult Checkout()
     {
-        var clientId = GetCurrentClientId();
-        var client = _context.Clients.Include(c => c.Cart).FirstOrDefault(c => c.clientId == clientId);
-
-        if (client == null)
-        {
-            return View("Error");
-        }
-
-        var cart = client.Cart;
-        
-
-        cart.Products.Clear();
-        _context.SaveChanges();
-
+        DeleteCart();
         return View("ThankYou"); 
     }
     
@@ -143,7 +137,6 @@ public class CartController : Controller
         {
             return clientId;
         }
-
         return 0; 
     }
 }

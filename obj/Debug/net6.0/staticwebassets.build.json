@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "y2aC/MHQ4Ff62AXyVDyoJ0jqbqNWkG0it9e7VH/qWCs=",
+  "Hash": "PgMCdqXNciyqHMorbbISZKK+7/8bH3sxv7UKEaAXbr4=",
   "Source": "Eshopping MVC",
   "BasePath": "_content/Eshopping MVC",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot/deo.jpeg"
     },
     {
+      "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/elkef.png",
+      "SourceId": "Eshopping MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/",
+      "BasePath": "_content/Eshopping MVC",
+      "RelativePath": "elkef.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/elkef.png"
+    },
+    {
       "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/favicon.ico",
       "SourceId": "Eshopping MVC",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/garnier.jpg",
+      "SourceId": "Eshopping MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/",
+      "BasePath": "_content/Eshopping MVC",
+      "RelativePath": "garnier.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/garnier.jpg"
     },
     {
       "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/headandshoulders.jpeg",
@@ -1103,6 +1137,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/loreal.jpg",
+      "SourceId": "Eshopping MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/",
+      "BasePath": "_content/Eshopping MVC",
+      "RelativePath": "loreal.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/loreal.jpg"
+    },
+    {
+      "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/madar.jpg",
+      "SourceId": "Eshopping MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/",
+      "BasePath": "_content/Eshopping MVC",
+      "RelativePath": "madar.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/madar.jpg"
     },
     {
       "Identity": "/home/hassane/RiderProjects/Eshopping MVC/Eshopping MVC/wwwroot/sanitol.png",
